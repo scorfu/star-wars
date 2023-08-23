@@ -32,7 +32,7 @@ export const { setCharacters, setAddedCharacters, setNextPage, setPreviousPage} 
 export const fetchAndSetCharacters = () => async dispatch => {
 
     try {
-        const charactersData = await fetchStarWars('characters');
+        const charactersData = await fetchStarWars('characters', 'https://swapi.dev/api/people/');
         dispatch(setCharacters(charactersData.results));
         dispatch(setNextPage(charactersData.next));
         dispatch(setPreviousPage(charactersData.previous));
