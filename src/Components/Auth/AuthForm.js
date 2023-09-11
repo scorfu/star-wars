@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchUser } from '../../fetch/fetch';
 import classes from './AuthForm.module.css';
+import { authKEY } from '../../store/authKEY';
 
 const AuthForm = () => {
   const emailInputRef = useRef();
@@ -27,9 +28,9 @@ const AuthForm = () => {
     setIsLoading(true) //set is loading to true whenever you do a request
     let url; //depending on the isLogin url changes from SIGN IN to SIGN UP
     if (isLogin) {
-      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCd2cgpFmJzwCnuzo_JhLILTGFeK7H2R9Y'
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${authKEY}`
     } else {
-      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCd2cgpFmJzwCnuzo_JhLILTGFeK7H2R9Y'
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${authKEY}`
     }
     const options = {
       enteredEmail: enteredEmail,
