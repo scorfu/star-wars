@@ -1,11 +1,12 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { fetchStarWars } from '../fetch/fetch';
 
 const initialState = {
-    characters: [],
-    nextPage: null,
-    previousPage: null,
-    addedCharacters: []
+    charactersCurrently: [],
+    charactersByPage: {},
+    currentPage: 'https://swapi.dev/api/people/?page=1',
+    currentPageNumber: 1,
+    isLoading: true
 }
 
 const charactersSlice = createSlice({
@@ -13,31 +14,36 @@ const charactersSlice = createSlice({
     initialState,
     reducers: {
         setCharacters: (state, action) => {
-            state.characters = action.payload;
+            const characters = action.payload.results; //get the array of characters
+            state.charactersByPage[state.currentPageNumber] = characters; // key=the number of the page: the array of characters corresponding to the number of the page
         },
-        setAddedCharacters: (state, action) => {
-            state.addedCharacters = action.payload;
+
+        setCharactersCurently: (state, action) => {
+            state.charactersCurrently = action.payload;
         },
-        setNextPage: (state, action) => {
-            state.nextPage = action.payload
+        setCurrentPage: (state, action) => {
+            state.currentPage = action.payload;
         },
-        setPreviousPage: (state, action) => {
-            state.previousPage = action.payload
+        setCurrentPageNumber: (state, action) => {
+            state.currentPageNumber = action.payload;
+        },
+        setIsLoading: (state, action) => {
+            state.isLoading = action.payload;
         }
     }
 });
 
-export const { setCharacters, setAddedCharacters, setNextPage, setPreviousPage} = charactersSlice.actions;
+export const { setCharacters, setCharactersCurently, setCurrentPage, setCurrentPageNumber, setIsLoading } = charactersSlice.actions;
 
-export const fetchAndSetCharacters = () => async dispatch => {
+export const fetchAndSetCharacters = (url) => async dispatch => {
 
     try {
-        const charactersData = await fetchStarWars('characters', 'https://swapi.dev/api/people/');
-        dispatch(setCharacters(charactersData.results));
-        dispatch(setNextPage(charactersData.next));
-        dispatch(setPreviousPage(charactersData.previous));
+        const charactersData = await fetchStarWars('characters', url);
         console.log(charactersData);
-    } catch(error) {
+        dispatch(setCharacters(charactersData));
+        dispatch(setCharactersCurently(charactersData.results));
+        dispatch(setIsLoading(false))
+    } catch (error) {
         console.error('Couldn\'t get movie\'s data: ', error);
     }
 };
