@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-Project used ONLY to practice API calls, it is not a polished/ to be added to the portofolio project.
+Project used ONLY to practice API calls.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
