@@ -1,0 +1,28 @@
+@import url("https://fonts.cdnfonts.com/css/star-wars");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+button {
+  background-color: #ae3232;
+  color: #1f2731;
+  border: none;
+  border-radius: 5px;
+  width: 15vw;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.action button:hover {
+  background-color: #276460;
+  border-color: #34796a;
+}
+
+.home_accordion_header button:not(.collapsed) {
+  background-color: #525445;
+}
+
+.home_accordion_header button:hover {
+  background-color: #a0a485;
+}
+
+.home_accordion_body {
+  background-color: #a0a485;
+}/*# sourceMappingURL=HomePage.module.css.map */

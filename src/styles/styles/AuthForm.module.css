@@ -1,0 +1,89 @@
+@import url("https://fonts.cdnfonts.com/css/star-wars");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+button {
+  background-color: #ae3232;
+  color: #1f2731;
+  border: none;
+  border-radius: 5px;
+  width: 15vw;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.action button:hover {
+  background-color: #276460;
+  border-color: #34796a;
+}
+
+.auth {
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 25rem;
+  border-radius: 6px;
+  background-color: #525445;
+  box-shadow: 0 1px 4px rgba(5, 127, 117, 0.294);
+  padding: 1rem;
+  color: #1f2731;
+}
+
+.auth h1 {
+  color: #ae3232;
+  text-align: center;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.control input {
+  font: inherit;
+  background-color: #ecf1c1;
+  color: #ae3232;
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  font: inherit;
+  color: white;
+  border: 1px solid #276460;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+  width: 75%;
+}
+
+.actions button:hover {
+  background-color: #34796a;
+  border-color: #525445;
+}
+
+.actions .toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #ae3232;
+  font-weight: bold;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.actions .toggle:hover {
+  background-color: transparent;
+  color: #34796a;
+}/*# sourceMappingURL=AuthForm.module.css.map */

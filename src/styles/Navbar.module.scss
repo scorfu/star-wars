@@ -1,11 +1,15 @@
+@use './variables' as *;
+@use './button' as *;
+
 header {
   width: 100%;
   height: 5rem;
   display: flex;
   padding: 0 10%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  background-color: #008080;
+  background-color: $tealDark;
+  font-family: $starFont;;
 }
 
 nav ul {
@@ -22,14 +26,14 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #88dfdf;
+  color: $gold;
 }
-
 
 nav a:hover,
 nav a:active,
 nav a.active {
-  color: #95bcf0;
+  color: $lightBackground;
   padding-bottom: 0.25rem;
-  border-bottom: 4px solid #95bcf0;
+  border-bottom: 5px solid $gold;
 }
+

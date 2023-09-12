@@ -1,5 +1,12 @@
+@use './variables' as *;
+@use './button' as *;
+@import '_button.scss';
+
+
 body{
-    background-color: aqua;
+    background-color: $lightBackground;
     justify-content: center;
-    font-size: 40px;
+    font-size: $regularText;
+    color: $tealMedium;
+    font-family: $regularFont;
 }

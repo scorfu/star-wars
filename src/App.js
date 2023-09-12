@@ -1,7 +1,6 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 
 
 import AuthPage from './Pages/AuthPage';
@@ -15,9 +14,9 @@ import AllVechicles from './Pages/AllVehicles';
 import Favorites from './Pages/Favorites';
 import NotFound from './Pages/NotFound';
 import Layout from './Components/Layout/Layout';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import { logout } from './features/starWarsAuthSlice';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles/App.css';
-import { logout } from './features/starWarsAuthSlice';
 
 const PrivateRoutes = () => {
   const isLoggedIn = useSelector((state) => state.auth.token);
@@ -27,18 +26,18 @@ const PrivateRoutes = () => {
 };
 
 function App() {
-  const isLoggedIn = useSelector((state) => state.auth.token);
-  const dispatch = useDispatch();
+  // const isLoggedIn = useSelector((state) => state.auth.token);
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-   const timer = setTimeout(()=> dispatch(logout()), 1000*60*45); //after 45 minutes erase all local storage to logout
-  //  console.log(timer);
+  // useEffect(() => {
+  //   const timer = setTimeout(()=> dispatch(logout()), 1000*60*1); //after 45 minutes erase all local storage to logout
+  //   console.log(timer);
 
-    return () => {
-      // console.log('Iclean');
-      clearTimeout(timer)}
+  //   return () => {
+  //     // console.log('Iclean');
+  //     clearTimeout(timer)}
 
-  }, [isLoggedIn])
+  // }, [isLoggedIn])
 
   return (
     <div className='app'>

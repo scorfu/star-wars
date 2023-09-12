@@ -1,0 +1,16 @@
+@use './variables' as *;
+
+button {
+    background-color: $orange;
+    color: $tealDarker;
+    border: none;
+    border-radius: 5px;
+    width: 15vw;
+    padding: 5px;
+    cursor: pointer;
+}
+  
+  .action button:hover {
+    background-color: $tealMedium;
+    border-color: $tealGreen;
+  }

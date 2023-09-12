@@ -3,7 +3,7 @@ import { login } from '../../features/starWarsAuthSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchUser } from '../../fetch/fetch';
-import classes from './AuthForm.module.css';
+import classes from '../../styles/styles/AuthForm.module.css';
 import { authKEY } from '../../store/authKEY';
 
 const AuthForm = () => {

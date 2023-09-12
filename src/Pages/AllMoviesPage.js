@@ -27,6 +27,7 @@ const AllMoviesPage = () => {
                 eg: "https://swapi.dev/api/people/1/"
                 MOVIES page has a characters array that you do not display because they are API links("https://swapi.dev/api/people/1/"). Conditionally display them if you have them in the store, like once you went in AllCharacters page
             </div>
+            <p>The background colors (except black, there are 5 in total) specific to each movie, according to VOX (https://www.vox.com/culture/2015/12/17/10322514/star-wars-colors) are represented in each card as background colors</p>
             <div>
                 {allMovies.length <= 0 ? <div className="spinner-border" role="status"> </div> : <div>{allMovies.map((movie, index) => <MoviesInfo movies={movie} characters={movie.characters} key={index}></MoviesInfo>)}</div>}
             </div>

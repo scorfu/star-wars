@@ -1,5 +1,5 @@
 import ProfileForm from './ProfileForm';
-import classes from './UserProfile.module.css';
+import classes from '../../styles/styles/UserProfile.module.css';
 import { useSelector } from 'react-redux';
 
 const UserProfile = () => {
@@ -7,8 +7,8 @@ const UserProfile = () => {
 
   return (
     <section className={classes.profile}>
-      <h1>Your User Profile</h1>
-      <h3>Logged in as: {user}</h3>
+      <h3>Your User Profile</h3>
+      <h4>Logged in as: {user}</h4>
       <ProfileForm />
     </section>
   );

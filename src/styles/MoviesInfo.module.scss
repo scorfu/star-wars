@@ -1,0 +1,30 @@
+@use './variables' as *;
+
+.card {
+    width: 90%;
+    // display: flex;
+    text-align: justify;
+    // align-items: center;
+    margin-left: 5vw;
+    margin-bottom: 2vw;
+    // background-color: $lighterGreen;
+    border-color: $gold;
+    color: white;
+}
+
+.title4 {
+    background-color: #413639
+}
+.number4{
+    background-color: #76676c
+}
+
+.director4 {
+    background-color: #008ed6
+}
+.release4 {
+    background-color: #aba2a4
+}
+.text4 {
+    background-color: #dddce6
+}

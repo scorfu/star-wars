@@ -1,5 +1,6 @@
 import Accordion from 'react-bootstrap/Accordion';
 
+
 const CharacterInfo = ({ character }) => {
     return <>
         <Accordion>

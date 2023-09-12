@@ -1,4 +1,4 @@
-import classes from './ProfileForm.module.css';
+import classes from '../../styles/styles/ProfileForm.module.css';
 import React, { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchUser } from '../../fetch/fetch';
@@ -50,7 +50,7 @@ const ProfileForm = () => {
     // })
   }
   return (
-    <React.Fragment> {passwordChanged && <h2>Password changed successfuly</h2>}
+    <React.Fragment> {passwordChanged && <h3>Password changed successfuly</h3>}
       {!passwordChanged &&     <form className={classes.form} onSubmit={submitHandler}>
       <div className={classes.control}>
         <label htmlFor='new-password'>New Password</label>

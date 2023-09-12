@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/starWarsAuthSlice";
 
-import classes from './Navbar.module.css';
+import classes from '../../styles/styles/Navbar.module.css';
 
 const Navbar = () => {
     const isLoggedIn = useSelector(state => state.auth.token);
