@@ -1,3 +1,4 @@
+import React from "react";
 import AddFavorite from "../Components/Favorites/AddFavorite";
 import UserProfile from "../Components/Profile/UserProfile";
 
@@ -7,7 +8,7 @@ import classes from '../styles/styles/HomePage.module.css';
 
 const HomePage = () => {
 
-  return <>
+  return <React.Fragment>
     <Accordion>
       <Accordion.Item eventKey="0">
         <Accordion.Header className={classes.home_accordion_header}>Profile Info</Accordion.Header>
@@ -38,7 +39,7 @@ const HomePage = () => {
     <p>Page under construction/ website only used to test API GET calls</p>
 
 
-  </>
+  </React.Fragment>
 }
 
 export default HomePage;

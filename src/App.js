@@ -40,7 +40,7 @@ function App() {
   // }, [isLoggedIn])
 
   return (
-    <div className='app'>
+
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -60,7 +60,7 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
-    </div>
+
   )
 
   //INITIAL ROUTER /// INITIAL ROUTER /// INITIAL ROUTER //// / //// / / / / / / / / / / / / / // / / 
