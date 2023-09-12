@@ -46,4 +46,15 @@ nav a.active {
   nav ul li button {
     width: 10vw;
   }
+}
+@media screen and (max-width: 800px) {
+  header nav ul li {
+    font-size: 1rem;
+  }
+  nav li {
+    margin-left: 0.7rem;
+  }
+  nav ul li button {
+    width: 5vw;
+  }
 }/*# sourceMappingURL=Navbar.module.css.map */

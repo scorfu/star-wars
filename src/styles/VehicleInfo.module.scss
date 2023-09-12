@@ -1,31 +1,29 @@
 @use "./variables" as *;
 
-.vehicle_card{
-    border-style: none;
-    background-color: $lightBackground;
-    min-width: 30rem;
-    margin-bottom: 10vh;
-    color: $brownBackground;
-    padding-top: 10px;
+.vehicle_card {
+  border-style: none;
+  background-color: $lightBackground;
+  min-width: 35rem;
+  margin-bottom: 10vh;
+  color: $brownBackground;
+  padding-top: 10px;
 }
 .vehicle_card_body {
   background-color: $teal;
 }
-.vehicle_card_body:nth-of-type(1){
-    border-top-right-radius: 25px;
-    border-top: none;
+.vehicle_card_body:nth-of-type(1) {
+  border-top-right-radius: 25px;
+  border-top: none;
 }
 .vehicle_card_body:last-of-type {
-    border-bottom-left-radius: 70px;
-    border-style: none;
-    background-color: $teal;
+  border-bottom-left-radius: 70px;
+  border-style: none;
+  background-color: $teal;
 }
-
 .vehicle_card_title {
   font-family: $starFont;
   font-size: medium;
 }
-
 .vechicle_table {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }

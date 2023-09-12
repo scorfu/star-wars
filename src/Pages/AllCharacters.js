@@ -1,4 +1,3 @@
-import Navbar from "../Components/Layout/Navbar"
 import CharacterInfo from "../Components/CharacterInfo";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
