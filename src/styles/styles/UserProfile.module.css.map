@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../_variables.scss","../UserProfile.module.scss"],"names":[],"mappings":"AAAQ;AACA;ACCR;EACI;EACA;EACA,ODOI;;;ACJN;EACE,WDUM","file":"UserProfile.module.css"}
+{"version":3,"sourceRoot":"","sources":["../_variables.scss","../UserProfile.module.scss"],"names":[],"mappings":"AAAQ;AACA;ACCR;EACI;EACA;EACA,ODMI;;;ACHN;EACE,WDuDM","file":"UserProfile.module.css"}

@@ -1,0 +1,10 @@
+@mixin common-styles {
+  margin: 0;
+  padding: 4px;
+}
+
+@mixin important-styles {
+  @include common-styles;
+  margin: 0 !important;
+  margin-bottom: -8px;
+}

@@ -7,7 +7,6 @@ $brownBackground: #2f1808;
 $orange: #ae3232;
 $gold: 	#a57b2b;
 
-
 $lighterGreen: #ecf1c1;
 $lightGreen: #a0a485;
 $green: #525445;
@@ -15,6 +14,52 @@ $tealGreen: #34796a;
 $tealMedium: #276460;
 $tealDark: #28333c;
 $tealDarker: #1f2731;
+
+//Colors by MOVIE
+$colors: (
+  1: (#47383d, #766468, #ac9696, #00c6f1, #c7cdd5),
+  2: (#373738, #744f3a, #c27e53, #66999d, #c4c6b5),
+  3: (#494445, #c53900, #6f787e, #bda699, #e6e2de),
+  4: (#413639, #76676c, #008ed6, #aba2a4, #dddce6),
+  5: (#3f3336, #495a71, #b2836a, #5e90be, #b8cadc),
+  6: (#393337, #655e64, #2876b1, #9aa0a9, #d4dee8)
+);
+
+// $title-bg-1: #47383d;
+// $number-bg-1: #766468;
+// $director-bg-1: #ac9696;
+// $release-bg-1: #00c6f1;
+// $text-bg-1: #c7cdd5;
+
+// $title-bg-2: #373738;
+// $number-bg-2: #744f3a;
+// $director-bg-2: #c27e53;
+// $release-bg-2: #66999d;
+// $text-bg-2: #c4c6b5;
+
+// $title-bg-3: #494445;
+// $number-bg-3: #c53900;
+// $director-bg-3: #6f787e;
+// $release-bg-3: #bda699;
+// $text-bg-3: #e6e2de;
+
+// $title-bg-4: #413639;
+// $number-bg-4: #76676c;
+// $director-bg-4: #008ed6;
+// $release-bg-4: #aba2a4;
+// $text-bg-4: #dddce6;
+
+// $title-bg-5: #3f3336;
+// $number-bg-5: #495a71;
+// $director-bg-5: #b2836a;
+// $release-bg-5: #5e90be;
+// $text-bg-5: #b8cadc;
+
+// $title-bg-6: #393337;
+// $number-bg-6: #655e64;
+// $director-bg-6: #2876b1;
+// $release-bg-6: #9aa0a9;
+// $text-bg-6: #d4dee8;
 
 $regularText: 1rem; 
 $bigText: 2rem;
