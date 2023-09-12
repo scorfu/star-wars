@@ -34,4 +34,16 @@ nav a.active {
   color: #eae5d4;
   padding-bottom: 0.25rem;
   border-bottom: 5px solid #a57b2b;
+}
+
+@media screen and (max-width: 1300px) {
+  header nav ul li {
+    font-size: 1rem;
+  }
+  nav li {
+    margin-left: 0.7rem;
+  }
+  nav ul li button {
+    width: 10vw;
+  }
 }/*# sourceMappingURL=Navbar.module.css.map */

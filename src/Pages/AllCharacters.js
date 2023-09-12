@@ -53,9 +53,11 @@ const AllCharacters = () => {
     return <>
         {/* <Navbar></Navbar> */}
         <h1>All Characters</h1>
-        <button onClick={() => pageHandler(-1)} >Back </button>
-        <span>{currentPageNumber}</span>
-        <button onClick={() => pageHandler(1)}>Next</button>
+        <div className='backNext-container'>
+            <button onClick={() => pageHandler(-1)} >Back </button>
+            <span>{currentPageNumber}</span>
+            <button onClick={() => pageHandler(1)}>Next</button>
+        </div>
         <div>
             {isLoading ? <div className="spinner-border" role="status"> </div> : <>{charactersCurrently.map(character => <CharacterInfo character={character} key={character.name}></CharacterInfo>)}</>}
 

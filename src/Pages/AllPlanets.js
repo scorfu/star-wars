@@ -52,12 +52,14 @@ const AllPlanets = (props) => {
             <h1>Planets</h1>
             <>
                 {isLoading ? <div className="spinner-border" role="status"> </div> :
-                    <>
-                        <button onClick={() => pageHandler(-1)} >Back </button>
-                        <span>{currentPageNumber}</span>
-                        <button onClick={() => pageHandler(1)}>Next</button>
+                    <React.Fragment>
+                        <div className="backNext-container">
+                            <button onClick={() => pageHandler(-1)} >Back </button>
+                            <span>{currentPageNumber}</span>
+                            <button onClick={() => pageHandler(1)}>Next</button>
+                        </div>
                         {planetsCurently.map(planet => <PlanetsInfo planet={planet} key={planet.name}></PlanetsInfo>)}
-                    </>
+                    </React.Fragment>
                 }
             </>
 
