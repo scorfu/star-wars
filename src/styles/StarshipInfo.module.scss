@@ -1,0 +1,29 @@
+@use "./variables" as *;
+
+.starship_card{
+    border: none;
+    background-color: $lightBackground;
+}
+.starship_card_body {
+  background-color: $teal;
+}
+.starship_card_body:nth-of-type(1){
+    border-top-right-radius: 25px;
+    border-top: none;
+}
+.starship_card_body:last-of-type{
+    border-bottom-left-radius: 70px;
+    border-top: none;
+}
+.starship_card {
+  width: 30rem;
+  margin: 5px;
+  color: $brownBackground;
+}
+.starship_card_title {
+  font-family: $starFont;
+  font-size: medium;
+}
+.starship_tableLine {
+  background-color: $tealMedium;
+}

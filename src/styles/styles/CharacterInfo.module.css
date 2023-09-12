@@ -1,0 +1,25 @@
+@import url("https://fonts.cdnfonts.com/css/star-wars");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+.character_accordion_header {
+  font-family: "Star Wars", sans-serif;
+}
+
+.character_accordion_header button:not(.collapesed), .traits_accordion_header button:not(.collapesed) {
+  background-color: #66999d;
+}
+
+.character_accordion_body {
+  background-color: #a0a485;
+}
+
+.traits_accordion_body {
+  background-color: #34796a;
+}
+
+.character_accordion_header button:hover {
+  background-color: #a0a485;
+}
+
+.traits_accordion_header button:hover {
+  background-color: #34796a;
+}/*# sourceMappingURL=CharacterInfo.module.css.map */

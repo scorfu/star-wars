@@ -1,13 +1,13 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Table from 'react-bootstrap/Table';
+import classes from '../styles/styles/StarshipInfo.module.css'
 
 const StarshipsInfo = ({ starship }) => {
     return (
-    <Card style={{ width: '30rem'}}>
-            <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-            <Card.Body>
-                <Card.Title>{starship.name}</Card.Title>
+    <Card className={classes.starship_card}>
+            <Card.Body className={classes.starship_card_body}>
+                <Card.Title className={classes.starship_card_title}>{starship.name}</Card.Title>
                 <Card.Text>
                     {starship.model}
                 </Card.Text>
@@ -15,7 +15,7 @@ const StarshipsInfo = ({ starship }) => {
                     Class: {starship.starship_class}
                 </Card.Text>
             </Card.Body>
-            <ListGroup className="list-group-flush">
+            <ListGroup className={`list-group-flush ${classes.starship_tableLine}`}>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -39,7 +39,7 @@ const StarshipsInfo = ({ starship }) => {
                 }</ListGroup.Item>
                 <ListGroup.Item>Max atmosphere speed: {starship.max_atmosphering_speed}</ListGroup.Item>
             </ListGroup>
-            <Card.Body>
+            <Card.Body className={classes.starship_card_body}>
                 <Card.Text>Lenght in meters: {starship.length === 'unknown' ? starship.length : new Intl.NumberFormat("en-US").format(starship.length)}</Card.Text>
             </Card.Body>
         </Card>

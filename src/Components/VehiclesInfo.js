@@ -1,13 +1,13 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Table from 'react-bootstrap/Table';
-
+import classes from '../styles/styles/VehicleInfo.module.css'
 function VehiclesInfo({vehicle}) {
 
   return (
-    <Card>
-      <Card.Body>
-        <Card.Title>{vehicle.name}</Card.Title>
+    <Card className={classes.vehicle_card}>
+      <Card.Body className={classes.vehicle_card_body}>
+        <Card.Title className={classes.vehicle_card_title}>{vehicle.name}</Card.Title>
         <Card.Text>
             {vehicle.model}
         </Card.Text>
@@ -16,7 +16,7 @@ function VehiclesInfo({vehicle}) {
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-      <Table striped bordered hover>
+      <Table striped bordered hover className={classes.vechicle_table}>
                     <thead>
                         <tr>
                             <th>Consumables</th>
@@ -38,8 +38,8 @@ function VehiclesInfo({vehicle}) {
         <ListGroup.Item>Length in meters: {vehicle.length}</ListGroup.Item>
         <ListGroup.Item>Max atmosphere speed: {vehicle.max_atmosphering_speed}</ListGroup.Item>
       </ListGroup>
-      <Card.Body>
-        <Card.Text>Manufacturer: {vehicle.manufacturer}</Card.Text>
+      <Card.Body className={classes.vehicle_card_body}>
+        <Card.Text >Manufacturer: {vehicle.manufacturer}</Card.Text>
       </Card.Body>
     </Card>
   );

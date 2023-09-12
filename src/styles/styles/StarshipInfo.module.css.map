@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../_variables.scss","../StarshipInfo.module.scss"],"names":[],"mappings":"AAAQ;AACA;ACCR;EACI;EACA,kBDDc;;;ACGlB;EACE,kBDKK;;;ACHP;EACI;EACA;;;AAEJ;EACI;EACA;;;AAEJ;EACE;EACA;EACA,ODhBgB;;;ACkBlB;EACE,aD6CS;EC5CT;;;AAEF;EACE,kBDbW","file":"StarshipInfo.module.css"}

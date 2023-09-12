@@ -2,11 +2,6 @@ import React from "react";
 import classes from '../styles/styles/MoviesInfo.module.css';
 
 const MoviesInfo = ({ movies }) => {
-    // const title_id = 'title'+movies.episode_id;
-    // const number_id = 'number'+movies.episode_id;
-    // const director_id = 'director'+movies.episode_id;
-    // const release_id = 'release'+movies.episode_id;
-    // const text_id = 'text'+movies.episode_id;
     const title_id = 'title'+movies.episode_id;
     const number_id = 'number'+movies.episode_id;
     const director_id = 'director'+movies.episode_id;

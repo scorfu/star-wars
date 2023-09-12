@@ -1,13 +1,14 @@
 import Accordion from 'react-bootstrap/Accordion';
 import Table from 'react-bootstrap/Table';
+import classes from '../styles/styles/PlanetsInfo.module.css'
 
 const PlanetsInfo = ({ planet }) => {
     const pop = planet.population.toLocaleString('en-US')
     return (
-        <Accordion defaultActiveKey="1" flush>
-            <Accordion.Item eventKey="0">
-                <Accordion.Header>{planet.name}</Accordion.Header>
-                <Accordion.Body>
+        <Accordion defaultActiveKey="0" flush className={classes.planet_accordion}>
+            <Accordion.Item eventKey="1" className={classes.planet_accordion}>
+                <Accordion.Header className={classes.planet_accordion_header}>{planet.name}</Accordion.Header>
+                <Accordion.Body className={classes.planet_accordion_body}>
                     <div>Appeared in {planet.films.length} from the 6 original movies</div>
                     <div>Planet residents that have appeared in movies: {planet.residents.length}</div>
                     <Table striped bordered hover>

@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../_variables.scss","../VehicleInfo.module.scss"],"names":[],"mappings":"AAAQ;AACA;ACCR;EACI;EACA,kBDDc;ECEd;EACA;EACA,ODHc;ECId;;;AAEJ;EACE,kBDCK;;;ACCP;EACI;EACA;;;AAEJ;EACI;EACA;EACA,kBDRG;;;ACWP;EACE,aD4CS;EC3CT;;;AAGF;EACI","file":"VehicleInfo.module.css"}

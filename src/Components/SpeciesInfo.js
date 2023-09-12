@@ -3,14 +3,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import Image from 'react-bootstrap/Image';
+import classes from '../styles/styles/SpeciesInfo.module.css'
 
 function SpeciesInfo({species}) {
   return (
-    <Container fluid>
+    <Container fluid className={classes.species_container}>
       <Row>
-        <Col>{species.name}</Col>
+        <Col className={classes.species_name}>{species.name}</Col>
       </Row>
-      <Row>
+      <Row className={classes.second_row}>
         <Col>Class: {species.classification}, {species.designation}</Col>
         <Col><Image src="" roundedCircle /></Col>
         <Col>Language: {species.language}</Col>
