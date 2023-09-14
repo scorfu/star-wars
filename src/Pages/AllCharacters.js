@@ -59,7 +59,6 @@ const AllCharacters = () => {
         </div>
         <div>
             {isLoading ? <div className="spinner-border" role="status"> </div> : <>{charactersCurrently.map((character, index) => <CharacterInfo character={character} key={character.name} index={index}></CharacterInfo>)}</>}
-
         </div>
     </>
 }

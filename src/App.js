@@ -11,7 +11,6 @@ import AllPlanets from './Pages/AllPlanets';
 import AllSpecies from './Pages/AllSpecies';
 import AllStarShips from './Pages/AllStarships';
 import AllVechicles from './Pages/AllVehicles';
-import Favorites from './Pages/Favorites';
 import NotFound from './Pages/NotFound';
 import Layout from './Components/Layout/Layout';
 // import { logout } from './features/starWarsAuthSlice';
@@ -53,7 +52,6 @@ function App() {
               <Route element={<AllPlanets />} path='/planets' />
               <Route element={<AllStarShips />} path='/starships' />
               <Route element={<AllVechicles />} path='/vehicles' />
-              <Route element={<Favorites />} path='/favorites' />
               <Route element={<NotFound />} path='*' />
             </Route>
             <Route element={<AuthPage />} path='/auth' />

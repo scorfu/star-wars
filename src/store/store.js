@@ -6,6 +6,7 @@ import starWarsPlanetsSlice from "../features/starWarsPlanetsSlice";
 import starWarsStarshipsSlice from "../features/starWarsStarshipsSlice";
 import starWarsVehiclesSlice from "../features/starWarsVehiclesSlice";
 import starWarsAuthSlice from "../features/starWarsAuthSlice";
+import favoritesSlice from "../features/favoritesSlice";
 
 export const store = configureStore({
     reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
         planets: starWarsPlanetsSlice,
         starships: starWarsStarshipsSlice,
         vehicles: starWarsVehiclesSlice,
-        auth: starWarsAuthSlice
+        auth: starWarsAuthSlice,
+        favorites: favoritesSlice
     }
 })

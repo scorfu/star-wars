@@ -1,7 +1,7 @@
 import React from "react";
 import AddFavorite from "../Components/Favorites/AddFavorite";
 import UserProfile from "../Components/Profile/UserProfile";
-
+import Favorites from '../Components/Favorites/Favorites';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import classes from '../styles/styles/HomePage.module.css';
@@ -34,11 +34,7 @@ const HomePage = () => {
       <Accordion.Item eventKey="2">
         <Accordion.Header className={classes.home_accordion_header}>Favourites</Accordion.Header>
         <Accordion.Body className={classes.home_accordion_body}>
-          <div>Favorites</div>
-          <div>Favorites</div>
-          <div>Favorites</div>
-          <div>Favorites</div>
-          <div>Favorites</div>
+          <Favorites>Favorites</Favorites>
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>

@@ -12,15 +12,16 @@
 .control input,
 .control textarea {
   display: block;
-  width: 100%;
   font: inherit;
-  padding: 0.2rem;
-  border-radius: 12px;
-  border: 1px solid #ccc;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #a57b2b;
+  padding: 0.25rem;
+  background-color: #ecf1c1;
 }
 
 .control input:focus,
 .control textarea:focus {
   outline: none;
-  border-color: #230052;
+  border-color: #ae3232;
 }

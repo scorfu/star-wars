@@ -42,18 +42,20 @@ const AuthForm = () => {
       if (res.status === 200) {
         const usefullData = {
           email: res.data.email,
-          idToken: res.data.idToken
+          idToken: res.data.idToken,
+          uID: res.data.localId
         }
         dispatch(login(usefullData));
         navigate('/')
+        console.log(res.data);
         return res.data;
       }
     }).catch(err => {
-        setIsLoading(false)
-        alert(err.response.data.error.message)
-        console.error(err.response)
-        console.error(err.response.data.error.message)
-      });
+      setIsLoading(false)
+      alert(err.response.data.error.message)
+      console.error(err.response)
+      console.error(err.response.data.error.message)
+    });
     // // fetch done with the fetch fn inside the component 
     // fetch(url,
     //   {
