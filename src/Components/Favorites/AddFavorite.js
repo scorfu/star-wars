@@ -23,10 +23,12 @@ function AddFavorite() {
     };
     //ADDING THE uID to save the data in '/notes/UIDofTHEuser'
     fetchFavorites('postNotes', `https://starwars-9376c-default-rtdb.europe-west1.firebasedatabase.app/notes/${uID}.json`, note)
-      .then(res => {
-        // console.log(res); //add validation in case the answer is not OK!!!
+      .then(() => {
         dispatch(fetchAndSetNotes(uID));//re-setting (getting the updated data) data to store so the "Favorites" component gets re-rendered
-        setKey(currentKey => currentKey+1); //update the key so this component gets re-rendered
+        setKey(currentKey => currentKey + 1); //update the key so this component gets 
+      }).catch((error) => {
+        console.error(error.response.data.error);
+        alert(error.response.data.error)
       });
   }
 

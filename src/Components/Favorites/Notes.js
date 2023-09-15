@@ -12,10 +12,12 @@ const Notes = ({ noteDetails }) => {
         const foundNote = notes.find( note => note === noteDetails);
 
         fetchFavorites('deleteNotes', `https://starwars-9376c-default-rtdb.europe-west1.firebasedatabase.app/notes/${uID}/${foundNote.id}.json`)
-        .then((res) => {
-            // console.log(res); //add validation in case the answer is not OK!!!
-            dispatch(fetchAndSetNotes(uID));
-        });//re-setting data to store so the component gets re-rendered
+        .then(() => {
+            dispatch(fetchAndSetNotes(uID));//re-setting data to store so the component gets re-rendered
+        }).catch((error) => {
+            console.error(error.response.data.error);
+            alert(error.response.data.error)
+          });
     }
 
     return (

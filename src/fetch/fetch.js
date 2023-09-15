@@ -127,6 +127,7 @@ export const fetchFavorites = async (type, url, options) => {
                 })
                 return response
             } catch (error) {
+                // console.error(error)
                 throw error;
             }
             break;

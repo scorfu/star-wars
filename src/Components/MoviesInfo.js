@@ -7,7 +7,7 @@ const MoviesInfo = ({ movies }) => {
     const director_id = 'director'+movies.episode_id;
     const release_id = 'release'+movies.episode_id;
     const text_id = 'text'+movies.episode_id;
-    console.log(title_id);
+
     return <React.Fragment>
         <div className={`card ${classes.card}`}>
             <div className={`card-body`}>
