@@ -49,6 +49,6 @@ function AddFavorite() {
       <button>Add Note</button>
     </form>
   );
-}
+};
 
 export default AddFavorite;

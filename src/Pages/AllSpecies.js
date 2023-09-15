@@ -1,11 +1,7 @@
-import React from "react";
-import Navbar from "../Components/Layout/Navbar";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from "react";
 import { fetchAndSetSpecies, setCurrentPageNumber, setCurrentPageURL } from "../features/starWarsSpeciesSlice";
-
 import SpeciesInfo from "../Components/SpeciesInfo";
-
 
 const AllSpecies = () => {
     const dispatch = useDispatch();
@@ -17,14 +13,11 @@ const AllSpecies = () => {
     const URLtoAdd = 'https://swapi.dev/api/species/?page=';
     console.log("One", speciesDisplayed);
     console.log("All", speciesByPage);
+
     useEffect(() => {
-        let isCancelled = false;
-        if (!isCancelled && !Object.keys(speciesByPage)[0]) {
+        if (!Object.keys(speciesByPage)[0]) {
             setIsLoading(true);
             dispatch(fetchAndSetSpecies(currentPageURL)).then(() => setIsLoading(false));
-        }
-        return () => {
-            isCancelled = true;
         }
     }, []);
 
@@ -33,7 +26,7 @@ const AllSpecies = () => {
         setIsLoading(true)
         if (nextPageNumber >= 5) {
             console.log('No more pages');
-            nextPageNumber = currentPageNumber
+            nextPageNumber = currentPageNumber;
             return
         }
         const nextURL = URLtoAdd + nextPageNumber;

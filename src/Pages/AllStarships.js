@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentPageURL, setCurrentPageNumber, fetchAndSetStarships } from '../features/starWarsStarshipsSlice'
+import { setCurrentPageURL, setCurrentPageNumber, fetchAndSetStarships } from '../features/starWarsStarshipsSlice';
 import StarshipsInfo from "../Components/StarshipsInfo";
-import classes from '../styles/styles/AllStarships.module.css'
+import classes from '../styles/styles/AllStarships.module.css';
 
 
 const AllStarShips = () => {
     const dispatch = useDispatch();
-
     const currentPageURL = useSelector(state => state.starships.currentPageURL);
     const starshipsDisplayed = useSelector(state => state.starships.starshipsDisplayed);
     const currentPageNumber = useSelector(state => state.starships.currentPageNumber);
@@ -17,10 +16,10 @@ const AllStarShips = () => {
 
     useEffect(() => {
         if (currentPageNumber < 5) {
-            setIsLoading(true)
+            setIsLoading(true);
             let nextPageNumber = currentPageNumber + 1;
             dispatch(fetchAndSetStarships(currentPageURL)).then(() => {
-                setIsLoading(false)
+                setIsLoading(false);
             });
             dispatch(setCurrentPageNumber(nextPageNumber));
             dispatch(setCurrentPageURL(URLtoAdd + nextPageNumber));

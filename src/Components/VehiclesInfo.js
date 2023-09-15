@@ -2,9 +2,8 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Table from 'react-bootstrap/Table';
 import classes from '../styles/styles/VehicleInfo.module.css';
-import React from 'react';
-function VehiclesInfo({ vehicle }) {
 
+function VehiclesInfo({ vehicle }) {
   return (
     <Card className={classes.vehicle_card}>
       <Card.Body className={classes.vehicle_card_body}>

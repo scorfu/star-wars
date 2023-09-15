@@ -1,24 +1,21 @@
-@use './variables' as *;
+@use "./variables" as *;
 
-.character_accordion_header{
-    font-family: $starFont;
+.character_accordion_header {
+  font-family: $starFont;
 }
-
-.character_accordion_header button:not(.collapesed), .traits_accordion_header button:not(.collapesed) {
-    background-color: $teal;
+.character_accordion_header button:not(.collapesed),
+.traits_accordion_header button:not(.collapesed) {
+  background-color: $teal;
 }
-
 .character_accordion_body {
-    background-color: $lightGreen;
+  background-color: $lightGreen;
 }
-
 .traits_accordion_body {
-    background-color: $tealGreen;
+  background-color: $tealGreen;
 }
-
 .character_accordion_header button:hover {
-    background-color: $lightGreen;
+  background-color: $lightGreen;
 }
 .traits_accordion_header button:hover {
-    background-color: $tealGreen;
+  background-color: $tealGreen;
 }

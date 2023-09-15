@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 import Image from 'react-bootstrap/Image';
 import classes from '../styles/styles/SpeciesInfo.module.css'
 
-function SpeciesInfo({species}) {
+function SpeciesInfo({ species }) {
   return (
     <Container fluid className={classes.species_container}>
       <Row>
@@ -17,25 +17,25 @@ function SpeciesInfo({species}) {
         <Col>Language: {species.language}</Col>
       </Row>
       <Table striped bordered hover>
-      <thead>
-        <tr>
-          <th>Average height (cm)</th>
-          <th>Average lifespan</th>
-          <th>Eye Colors</th>
-          <th>Hair color</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{species.average_height}</td>
-          <td>{species.average_lifespan}</td>
-          <td /**colSpan={2} */ >{species.eye_colors}</td>
-          <td>{species.hair_colors}</td>
-        </tr>
-      </tbody>
-    </Table>
-    <hr/>
-    <hr/>
+        <thead>
+          <tr>
+            <th>Average height (cm)</th>
+            <th>Average lifespan</th>
+            <th>Eye Colors</th>
+            <th>Hair color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{species.average_height}</td>
+            <td>{species.average_lifespan}</td>
+            <td /**colSpan={2} */ >{species.eye_colors}</td>
+            <td>{species.hair_colors}</td>
+          </tr>
+        </tbody>
+      </Table>
+      <hr />
+      <hr />
     </Container>
   );
 }

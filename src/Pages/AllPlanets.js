@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Navbar from "../Components/Layout/Navbar";
 import { useDispatch, useSelector } from 'react-redux';
 import { setPlanetsCurrently, setCurrentPage, setCurrentPageNumber, setIsLoading, fetchAndSetPlanets } from "../features/starWarsPlanetsSlice";
 import PlanetsInfo from "../Components/PlanetsInfo";
@@ -13,8 +12,8 @@ const AllPlanets = () => {
     const isLoading = useSelector(state => state.planets.isLoading);
     const URLtoAdd = 'https://swapi.dev/api/planets/?page=';
     console.log(planetsCurently);
-    console.log(currentPage);
-    console.log(currentPageNumber);
+    // console.log(currentPage);
+    // console.log(currentPageNumber);
     console.log(planetsByPage);
 
     const pageHandler = (direction) => {
@@ -29,7 +28,7 @@ const AllPlanets = () => {
             dispatch(setPlanetsCurrently(planetsByPage[targetPageData]));
             dispatch(setCurrentPageNumber(targetPageNumber));
             dispatch(setCurrentPage(URLtoAdd + targetPageNumber));
-            dispatch(setIsLoading(false))
+            dispatch(setIsLoading(false));
         }
         else {
             dispatch(fetchAndSetPlanets(URLtoAdd + targetPageNumber));
@@ -39,7 +38,6 @@ const AllPlanets = () => {
         }
     }
 
-
     useEffect(() => {
         if (!Object.keys(planetsByPage)[0]) {
             dispatch(fetchAndSetPlanets(currentPage));
@@ -48,7 +46,6 @@ const AllPlanets = () => {
 
     return (
         <React.Fragment>
-            {/* <Navbar></Navbar> */}
             <h1>Planets</h1>
             <React.Fragment>
                 {isLoading ?
@@ -63,7 +60,6 @@ const AllPlanets = () => {
                     </React.Fragment>
                 }
             </React.Fragment>
-
         </React.Fragment>
     )
 }

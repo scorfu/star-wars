@@ -24,7 +24,7 @@ export const { setMovies, setAddedMovies} = moviesSlice.actions;
 export const fetchAndSetMovies = () => async dispatch => {
     try {
         const moviesData = await fetchStarWars('movies', 'https://swapi.dev/api/films');
-        dispatch(setMovies(moviesData))
+        dispatch(setMovies(moviesData));
     } catch(error) {
         console.error('Couldn\'t get movie\'s data: ', error);
     }

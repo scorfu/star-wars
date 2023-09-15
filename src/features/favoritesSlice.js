@@ -5,7 +5,7 @@ import { fetchFavorites } from '../fetch/fetch';
 const transformObjtoArray = (notesOjb) => {
     const notesArray = [];
     for (const key in notesOjb) {
-       notesArray.push({
+        notesArray.push({
             id: key,
             summary: notesOjb[key].summary,
             description: notesOjb[key].description,
@@ -14,12 +14,11 @@ const transformObjtoArray = (notesOjb) => {
     };
     return notesArray;
 };
-
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // // 
 
 const initialState = {
     notes: [],
-}
+};
 
 const favoritesSlice = createSlice({
     name: 'favorites',
@@ -36,18 +35,16 @@ export const { setNotes } = favoritesSlice.actions;
 export const fetchAndSetNotes = (userID) => async dispatch => {
     try {
         const notesData = await fetchFavorites('getNotes', `https://starwars-9376c-default-rtdb.europe-west1.firebasedatabase.app/notes/${userID}.json`);  //add the uID so only the notes for the respective user will be fetched
-        console.log(notesData.data);
         const onlyNotesData = notesData.data; //coming as an object key(id of the FIREBASE's obj)/ value(actual data as an object)
+        dispatch(setNotes(transformObjtoArray(onlyNotesData)));
 
-        dispatch(setNotes(transformObjtoArray(onlyNotesData)))
-
-    } catch(error) {
+    } catch (error) {
         console.error('Couldn\'t get favorites data: ', error);
         throw error;
-         }
+    }
 };
-    
 
-export default favoritesSlice.reducer; 
+
+export default favoritesSlice.reducer;
 
 

@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchStarWars } from '../fetch/fetch';
 
-
 const initialState = {
     speciesDisplayed: [],
     speciesByPage: {},
@@ -18,7 +17,6 @@ const speciesSlice = createSlice({
             state.speciesByPage[state.currentPageNumber] = species;
         },
         setSpeciesDisplayed: (state, action) => {
-            console.log(action.payload);
             state.speciesDisplayed.push(...action.payload);
         },
         setCurrentPageURL: (state, action) => {
@@ -35,7 +33,6 @@ export const {setSpecies, setSpeciesDisplayed, setCurrentPageURL, setCurrentPage
 export const fetchAndSetSpecies = (url) => async dispatch => {
     try {
         const speciesData = await fetchStarWars('species', url);
-        console.log(speciesData);
         dispatch(setSpecies(speciesData));
         dispatch(setSpeciesDisplayed(speciesData));
     } catch (error) {

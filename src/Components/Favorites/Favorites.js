@@ -6,10 +6,10 @@ import Notes from './Notes';
 const Favorites = () => {
     const dispatch = useDispatch();
     const allNotes = useSelector(state => state.favorites.notes);
-    const uID = useSelector(state => state.auth.uID)
+    const uID = useSelector(state => state.auth.uID);
 
     useEffect(() => { //fetch the data and set it to store when component mounts
-        dispatch(fetchAndSetNotes(uID))
+        dispatch(fetchAndSetNotes(uID));
     }, []);
 
     return (
@@ -18,10 +18,10 @@ const Favorites = () => {
 
             {allNotes.map((note, index) => {
                 return (
-                    <Notes key={index} noteDetails={note}>
-                    </Notes>
+                <Notes key={index} noteDetails={note}>
+                </Notes>
                 )
-            })}
+            })};
         </React.Fragment>
     )
 }

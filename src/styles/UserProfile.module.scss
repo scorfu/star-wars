@@ -1,11 +1,10 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 .profile {
-    margin: 3rem auto;
-    text-align: center;
-    color: $green;
-  }
-  
-  .profile h3 {
-    font-size: $bigText;
-  }
+  margin: 3rem auto;
+  text-align: center;
+  color: $green;
+}
+.profile h3 {
+  font-size: $bigText;
+}

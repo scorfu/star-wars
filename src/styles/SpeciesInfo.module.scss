@@ -1,16 +1,16 @@
-@use './variables' as *;
+@use "./variables" as *;
 
-.species_container{
-    margin-bottom: 6vh;
+.species_container {
+  margin-bottom: 6vh;
 }
-
-.species_name, .second_row{
-    font-family: $starFont;
-    color: $brownBackground;
+.species_name,
+.second_row {
+  font-family: $starFont;
+  color: $brownBackground;
 }
-.second_row{
-    font-size: small;
+.second_row {
+  font-size: small;
 }
 .species_container th {
-    background-color: $green;
+  background-color: $green;
 }

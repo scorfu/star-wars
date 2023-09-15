@@ -17,7 +17,6 @@ const charactersSlice = createSlice({
             const characters = action.payload.results; //get the array of characters
             state.charactersByPage[state.currentPageNumber] = characters; // key=the number of the page: the array of characters corresponding to the number of the page
         },
-
         setCharactersCurently: (state, action) => {
             state.charactersCurrently = action.payload;
         },
@@ -36,17 +35,14 @@ const charactersSlice = createSlice({
 export const { setCharacters, setCharactersCurently, setCurrentPage, setCurrentPageNumber, setIsLoading } = charactersSlice.actions;
 
 export const fetchAndSetCharacters = (url) => async dispatch => {
-
     try {
         const charactersData = await fetchStarWars('characters', url);
-        console.log(charactersData);
         dispatch(setCharacters(charactersData));
         dispatch(setCharactersCurently(charactersData.results));
-        dispatch(setIsLoading(false))
+        dispatch(setIsLoading(false));
     } catch (error) {
         console.error('Couldn\'t get movie\'s data: ', error);
     }
 };
-
 
 export default charactersSlice.reducer;

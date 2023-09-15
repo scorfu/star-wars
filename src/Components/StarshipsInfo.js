@@ -1,11 +1,11 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Table from 'react-bootstrap/Table';
-import classes from '../styles/styles/StarshipInfo.module.css'
+import classes from '../styles/styles/StarshipInfo.module.css';
 
 const StarshipsInfo = ({ starship }) => {
     return (
-    <Card className={classes.starship_card}>
+        <Card className={classes.starship_card}>
             <Card.Body className={classes.starship_card_body}>
                 <Card.Title className={classes.starship_card_title}>{starship.name}</Card.Title>
                 <Card.Text>

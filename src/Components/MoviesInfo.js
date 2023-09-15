@@ -16,9 +16,6 @@ const MoviesInfo = ({ movies }) => {
                 <h6 className={`card-subtitle mb-2 text-body-secondary ${classes[director_id]}`}>Director & Producer: {movies.director} & {movies.producer}</h6>
                 <h6 className={`card-subtitle mb-2 text-body-secondary ${classes[release_id]}`}>Release date: {movies.release_date}</h6>
                 <p className={`card-text ${classes[text_id]}`}>{movies.opening_crawl}</p>
-                {/* <Link to={`/movies/${movies.episode_id}`} className="card-link">More Details</Link> */}
-                {/* <div>{characters.map(character => <p>{character}</p>)}</div>
-                <a href="#" className="card-link">Another link</a> */}
             </div>
         </div>
     </React.Fragment>

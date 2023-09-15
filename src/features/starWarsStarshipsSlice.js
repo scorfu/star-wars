@@ -12,7 +12,6 @@ const starshipsSlice = createSlice({
     name: 'starships',
     initialState,
     reducers: {
-
         setStarshipsDisplayed: (state, action) => {
             state.starshipsDisplayed.push(...action.payload);
         },
@@ -26,7 +25,6 @@ const starshipsSlice = createSlice({
 });
 
 export const {setStarships, setStarshipsDisplayed, setCurrentPageURL, setCurrentPageNumber} = starshipsSlice.actions;
-
 
 export const fetchAndSetStarships = (url) => async dispatch => {
     try {

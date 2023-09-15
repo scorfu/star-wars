@@ -37,8 +37,8 @@ nav a.active {
   border-bottom: 5px solid $gold;
 }
 
-@media screen and (max-width: 1300px){
-  header nav ul li{
+@media screen and (max-width: 1300px) {
+  header nav ul li {
     font-size: 1rem;
   }
   nav li {
@@ -49,8 +49,8 @@ nav a.active {
   }
 }
 
-@media screen and (max-width: 800px){
-  header nav ul li{
+@media screen and (max-width: 800px) {
+  header nav ul li {
     font-size: 1rem;
   }
   nav li {

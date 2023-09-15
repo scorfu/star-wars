@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/starWarsAuthSlice";
-
 import classes from '../../styles/styles/Navbar.module.css';
 
 const Navbar = () => {
@@ -13,11 +12,10 @@ const Navbar = () => {
     const logoutHandler = () => {
         dispatch(logout());
         navigate('/auth');
-    }
+    };
 
     return (
         <header >
-            {/* <div>InsertLogoHere</div> */}
             <nav >
                 <ul>
                     {!isLoggedIn && (

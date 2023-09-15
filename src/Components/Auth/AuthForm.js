@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react';
-import { login } from '../../features/starWarsAuthSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { authKEY } from '../../store/authKEY';
+import { login } from '../../features/starWarsAuthSlice';
 import { fetchUser } from '../../fetch/fetch';
 import classes from '../../styles/styles/AuthForm.module.css';
-import { authKEY } from '../../store/authKEY';
 
 const AuthForm = () => {
   const emailInputRef = useRef();
@@ -12,7 +12,6 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-
   const dispatch = useDispatch();
 
   const switchAuthModeHandler = () => {
@@ -31,11 +30,11 @@ const AuthForm = () => {
       url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${authKEY}`
     } else {
       url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${authKEY}`
-    }
+    };
     const options = {
       enteredEmail: enteredEmail,
       enteredPassword: enteredPassword
-    }
+    };
 
     fetchUser('sign', url, options).then(res => {
       setIsLoading(false); //whenever you get a response even if it's not okay, set it back to false
@@ -47,14 +46,11 @@ const AuthForm = () => {
         }
         dispatch(login(usefullData));
         navigate('/homepage');
-        console.log(res.data);
         return res.data;
       }
     }).catch(err => {
-      setIsLoading(false)
-      alert(err.response.data.error.message)
-      console.error(err.response)
-      console.error(err.response.data.error.message)
+      setIsLoading(false);
+      alert(err.response.data.error.message);
     });
     // // fetch done with the fetch fn inside the component 
     // fetch(url,

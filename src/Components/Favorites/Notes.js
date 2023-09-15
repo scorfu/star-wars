@@ -16,7 +16,7 @@ const Notes = ({ noteDetails }) => {
             dispatch(fetchAndSetNotes(uID));//re-setting data to store so the component gets re-rendered
         }).catch((error) => {
             console.error(error.response.data.error);
-            alert(error.response.data.error)
+            alert(error.response.data.error);
           });
     }
 

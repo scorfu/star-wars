@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentPageURL, setCurrentPageNumber, fetchAndSetVehicles } from '../features/starWarsVehiclesSlice';
 import VehiclesInfo from "../Components/VehiclesInfo";
-import classes from '../styles/styles/AllVehicle.module.css'
+import classes from '../styles/styles/AllVehicle.module.css';
 
 const AllVechicles = () => {
     const dispatch = useDispatch();
@@ -26,7 +26,6 @@ const AllVechicles = () => {
     }, [currentPageNumber]);
 
     return (
-
         <React.Fragment>
             <h1>Vehicles</h1>
             <React.Fragment>{isLoading ?

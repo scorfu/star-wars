@@ -1,19 +1,10 @@
+import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-// import { useState } from 'react';
 import classes from '../styles/styles/CharacterInfo.module.css';
 
 const CharacterInfo = ({ character, index }) => {
-    // console.log(index);
-
-    // const indexx = index === 0 ? index : '1';
-    // const [activeKey, setActiveKey] = useState(null);
-    // const handleAccordionClick = (eventKey) => {
-    //     // Toggle the active event key when an Accordion.Header is clicked
-    //     setActiveKey(activeKey === eventKey ? null : eventKey);
-    //   };
-
-    return <>
-        <Accordion /*activeKey={activeKey} onSelect={handleAccordionClick}*/ >
+    return <React.Fragment>
+        <Accordion>
             <Accordion.Item eventKey={index}>
                 <Accordion.Header className={classes.character_accordion_header}>{character.name}</Accordion.Header>
                 <Accordion.Body className={classes.character_accordion_body}>
@@ -35,7 +26,7 @@ const CharacterInfo = ({ character, index }) => {
                 </Accordion.Body>
             </Accordion.Item>
         </Accordion>
-    </>
+    </React.Fragment>
 }
 
 export default CharacterInfo;

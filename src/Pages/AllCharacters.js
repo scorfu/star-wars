@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import CharacterInfo from "../Components/CharacterInfo";
 import { setCharactersCurently, fetchAndSetCharacters, setCurrentPage, setCurrentPageNumber, setIsLoading } from "../features/starWarsCharactersSlice";
 
-
 const AllCharacters = () => {
     const dispatch = useDispatch();
     const charactersCurrently = useSelector(state => state.characters.charactersCurrently);
@@ -12,6 +11,8 @@ const AllCharacters = () => {
     const charactersByPage = useSelector(state => state.characters.charactersByPage);
     const isLoading = useSelector(state => state.characters.isLoading);
     const URLtoAdd = 'https://swapi.dev/api/people/?page=';
+    console.log('One: ', charactersCurrently);
+    console.log('All: ', charactersByPage);
 
     const pageHandler = (direction) => {
         const targetPageNumber = currentPageNumber + direction;
@@ -24,16 +25,11 @@ const AllCharacters = () => {
             return;
         }
         if (targetPageData) {
-            // console.log(`Page ${direction > 0 ? 'next' : 'previous'} exists: ${targetPageData}`);
             dispatch(setCharactersCurently(charactersByPage[targetPageData]));
             dispatch(setCurrentPageNumber(targetPageNumber));
             dispatch(setCurrentPage(URLtoAdd + targetPageNumber));
             dispatch(setIsLoading(false));
         } else {
-            // console.log('Current page:', currentPage);
-            // console.log('Current page number:', currentPageNumber);
-            // console.log(`Page ${direction > 0 ? 'next' : 'previous'} number: ${targetPageNumber}`);
-            // console.log(`URL ${direction > 0 ? 'next' : 'previous'}: ${URLtoAdd + targetPageNumber}`);
             dispatch(fetchAndSetCharacters(URLtoAdd + targetPageNumber));
             dispatch(setCurrentPageNumber(targetPageNumber));
             dispatch(setCurrentPage(URLtoAdd + targetPageNumber));

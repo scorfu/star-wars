@@ -25,7 +25,6 @@ const vehiclesSlice = createSlice({
 
 export const { setVehiclesDisplayed, setCurrentPageURL, setCurrentPageNumber } = vehiclesSlice.actions;
 
-
 export const fetchAndSetVehicles = (url) => async dispatch => {
     try {
         const vehiclesData = await fetchStarWars('vehicles', url);
@@ -34,8 +33,6 @@ export const fetchAndSetVehicles = (url) => async dispatch => {
     } catch (error) {
         console.error('Couldn\'t get vehicles\'s data: ', error);
     }
-
 }
-
 
 export default vehiclesSlice.reducer;

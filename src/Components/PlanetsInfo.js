@@ -3,7 +3,6 @@ import Table from 'react-bootstrap/Table';
 import classes from '../styles/styles/PlanetsInfo.module.css'
 
 const PlanetsInfo = ({ planet }) => {
-    const pop = planet.population.toLocaleString('en-US')
     return (
         <Accordion defaultActiveKey="0" flush className={classes.planet_accordion}>
             <Accordion.Item eventKey="1" className={classes.planet_accordion}>

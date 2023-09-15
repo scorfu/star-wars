@@ -22,7 +22,7 @@ export const fetchStarWars = async (type, url) => {
             break;
         case 'species':
             try {
-                const response = await axios.get(url)
+                const response = await axios.get(url);
                 return response.data.results
             } catch (error) {
                 console.error('Errrrr when fetching: ', error);
@@ -31,7 +31,7 @@ export const fetchStarWars = async (type, url) => {
             break;
         case 'planets':
             try {
-                const response = await axios.get(url)
+                const response = await axios.get(url);
                 return response.data.results
             } catch (error) {
                 console.error('Errrrr when fetching: ', error);
@@ -40,7 +40,7 @@ export const fetchStarWars = async (type, url) => {
             break;
         case 'starships':
             try {
-                const response = await axios.get(url)
+                const response = await axios.get(url);
                 return response.data.results
             } catch (error) {
                 console.error('Errrrr when fetching: ', error);
@@ -49,8 +49,7 @@ export const fetchStarWars = async (type, url) => {
             break;
         case 'vehicles':
             try {
-                const response = await axios.get(url)
-                // console.log(response.data);
+                const response = await axios.get(url);
                 return response.data
             } catch (error) {
                 console.error('Errrrr when fetching: ', error);
@@ -73,8 +72,7 @@ export const fetchUser = async (type, url, options) => {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                })
-                console.log(response);
+                });
                 return response
             } catch (error) {
                 throw error;
@@ -91,7 +89,7 @@ export const fetchUser = async (type, url, options) => {
                     headers: {
                         'Content-Type': 'application/json',
                     },
-                })
+                });
                 return response
             } catch (error) {
                 throw error;
@@ -112,9 +110,8 @@ export const fetchFavorites = async (type, url, options) => {
                 throw error;
             }
             break;
-
         case 'postNotes':
-            const {summary, description, ps} = options;
+            const { summary, description, ps } = options;
             try {
                 const response = await axios.post(url, {
                     summary,
@@ -127,7 +124,6 @@ export const fetchFavorites = async (type, url, options) => {
                 })
                 return response
             } catch (error) {
-                // console.error(error)
                 throw error;
             }
             break;
@@ -138,5 +134,5 @@ export const fetchFavorites = async (type, url, options) => {
             } catch (error) {
                 throw error;
             }
-        }
     }
+}

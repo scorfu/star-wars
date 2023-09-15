@@ -1,13 +1,11 @@
-@use './variables' as *;
-
+@use "./variables" as *;
 
 .home_accordion_header button:not(.collapsed) {
-    background-color: $green;
+  background-color: $green;
 }
 .home_accordion_header button:hover {
-    background-color: $lightGreen;
+  background-color: $lightGreen;
 }
-.home_accordion_body{
-    background-color: $lightGreen;
-
+.home_accordion_body {
+  background-color: $lightGreen;
 }

@@ -12,7 +12,6 @@ const authSlice = createSlice({
     initialState,
     reducers: {
         login: (state, action) => {
-            console.log(action.payload);
             state.token = action.payload.idToken;
             state.user = action.payload.email;
             state.uID = action.payload.uID;
@@ -29,7 +28,6 @@ const authSlice = createSlice({
             localStorage.removeItem('token');
             localStorage.removeItem('email');
             localStorage.removeItem('uID');
-            console.log('loggedOUT');
         },
     }
 });

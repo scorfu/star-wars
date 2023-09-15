@@ -1,20 +1,18 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 .planet_accordion {
-    margin: 3px;
+  margin: 3px;
 }
-.planet_accordion_header{
-    font-family: $starFont;
+.planet_accordion_header {
+  font-family: $starFont;
 }
-
 .planet_accordion_header button:not(.collapesed) {
-    background-color: $teal;
+  background-color: $teal;
 }
-
-.planet_accordion_body, .planet_accordion_body th {
-    background-color: $lightGreen;
+.planet_accordion_body,
+.planet_accordion_body th {
+  background-color: $lightGreen;
 }
-
 .planet_accordion_body table {
-    border-color: $gold;
+  border-color: $gold;
 }

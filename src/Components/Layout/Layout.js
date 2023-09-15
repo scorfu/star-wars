@@ -1,12 +1,12 @@
-import { Fragment } from "react";
+import React from "react";
 import Navbar from "./Navbar";
 
 const Layout = (props) => {
     return (
-        <Fragment>
+        <React.Fragment>
             <Navbar></Navbar>
             <main>{props.children}</main>
-        </Fragment>
+        </React.Fragment>
     )
 };
 
