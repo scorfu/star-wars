@@ -1,6 +1,6 @@
-import CharacterInfo from "../Components/CharacterInfo";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from "react";
+import CharacterInfo from "../Components/CharacterInfo";
 import { setCharactersCurently, fetchAndSetCharacters, setCurrentPage, setCurrentPageNumber, setIsLoading } from "../features/starWarsCharactersSlice";
 
 
@@ -18,6 +18,8 @@ const AllCharacters = () => {
         const targetPageData = Object.keys(charactersByPage).find(pageNo => pageNo == targetPageNumber);
 
         if (targetPageNumber < 1 || targetPageNumber > 9) {
+            console.log('Target ', targetPageNumber);
+            console.log('Current', currentPageNumber);
             console.log('No more pages');
             return;
         }
@@ -26,7 +28,7 @@ const AllCharacters = () => {
             dispatch(setCharactersCurently(charactersByPage[targetPageData]));
             dispatch(setCurrentPageNumber(targetPageNumber));
             dispatch(setCurrentPage(URLtoAdd + targetPageNumber));
-            dispatch(setIsLoading(false))
+            dispatch(setIsLoading(false));
         } else {
             // console.log('Current page:', currentPage);
             // console.log('Current page number:', currentPageNumber);
@@ -40,27 +42,30 @@ const AllCharacters = () => {
     };
 
     useEffect(() => {
-        let isCancelled = false;
-        if (!isCancelled && !Object.keys(charactersByPage)[0]) {
+        if (!Object.keys(charactersByPage)[0]) {
             dispatch(fetchAndSetCharacters(currentPage));
-        }
-        return () => {
-            isCancelled = true;
         }
     }, []);
 
-    return <>
-        {/* <Navbar></Navbar> */}
-        <h1>All Characters</h1>
-        <div className='backNext-container'>
-            <button onClick={() => pageHandler(-1)} >Back </button>
-            <span>{currentPageNumber}</span>
-            <button onClick={() => pageHandler(1)}>Next</button>
-        </div>
-        <div>
-            {isLoading ? <div className="spinner-border" role="status"> </div> : <>{charactersCurrently.map((character, index) => <CharacterInfo character={character} key={character.name} index={index}></CharacterInfo>)}</>}
-        </div>
-    </>
+    return (
+        <React.Fragment>
+            <h1>All Characters</h1>
+            <div>
+                {isLoading
+                    ?
+                    <div className="spinner-border" role="status"></div>
+                    :
+                    <React.Fragment>
+                        <div className='backNext-container'>
+                            {currentPageNumber === 1 ? <button>End</button> : <button onClick={() => pageHandler(-1)} >Back </button>}
+                            <span>{currentPageNumber}</span>
+                            {currentPageNumber === 9 ? <button>End</button> : <button onClick={() => pageHandler(1)}>Next</button>}
+                        </div>
+                        {charactersCurrently.map((character, index) => <CharacterInfo character={character} key={character.name} index={index}></CharacterInfo>)}
+                    </React.Fragment>}
+            </div>
+        </React.Fragment>
+    )
 }
 
 export default AllCharacters;

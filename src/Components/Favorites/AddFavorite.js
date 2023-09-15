@@ -1,8 +1,8 @@
 import React, { useRef, useState, } from 'react';
-import { fetchFavorites } from '../../fetch/fetch'
-import classes from './AddFavorite.module.css';
 import { useSelector, useDispatch } from 'react-redux';
+import { fetchFavorites } from '../../fetch/fetch'
 import { fetchAndSetNotes } from '../../features/favoritesSlice';
+import classes from '../../styles/styles/AddFavorite.module.css';
 
 function AddFavorite() {
   const summaryRef = useRef('');

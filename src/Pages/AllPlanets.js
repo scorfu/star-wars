@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setPlanetsCurrently, setCurrentPage, setCurrentPageNumber, setIsLoading, fetchAndSetPlanets } from "../features/starWarsPlanetsSlice";
 import PlanetsInfo from "../Components/PlanetsInfo";
 
-const AllPlanets = (props) => {
+const AllPlanets = () => {
     const dispatch = useDispatch();
     const planetsCurently = useSelector(state => state.planets.planetsCurrently);
     const currentPage = useSelector(state => state.planets.currentPage);
@@ -50,18 +50,19 @@ const AllPlanets = (props) => {
         <React.Fragment>
             {/* <Navbar></Navbar> */}
             <h1>Planets</h1>
-            <>
-                {isLoading ? <div className="spinner-border" role="status"> </div> :
+            <React.Fragment>
+                {isLoading ?
+                    <div className="spinner-border" role="status"> </div> :
                     <React.Fragment>
                         <div className="backNext-container">
-                            <button onClick={() => pageHandler(-1)} >Back </button>
+                            {currentPageNumber === 1 ? <button>End</button> : <button onClick={() => pageHandler(-1)} >Back </button>}
                             <span>{currentPageNumber}</span>
-                            <button onClick={() => pageHandler(1)}>Next</button>
+                            {currentPageNumber === 6 ? <button>End</button> : <button onClick={() => pageHandler(1)}>Next</button>}
                         </div>
                         {planetsCurently.map(planet => <PlanetsInfo planet={planet} key={planet.name}></PlanetsInfo>)}
                     </React.Fragment>
                 }
-            </>
+            </React.Fragment>
 
         </React.Fragment>
     )

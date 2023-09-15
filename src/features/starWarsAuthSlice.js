@@ -28,7 +28,8 @@ const authSlice = createSlice({
             state.isLoggedIn = false;
             localStorage.removeItem('token');
             localStorage.removeItem('email');
-            localStorage.removeItem('uID')
+            localStorage.removeItem('uID');
+            console.log('loggedOUT');
         },
     }
 });
