@@ -46,7 +46,7 @@ const AuthForm = () => {
           uID: res.data.localId
         }
         dispatch(login(usefullData));
-        navigate('/')
+        navigate('/homepage');
         console.log(res.data);
         return res.data;
       }
