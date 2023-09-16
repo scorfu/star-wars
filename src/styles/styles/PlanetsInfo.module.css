@@ -12,10 +12,32 @@
   background-color: #66999d;
 }
 
-.planet_accordion_body, .planet_accordion_body th {
+.planet_accordion_body,
+.planet_accordion_body th {
   background-color: #a0a485;
 }
 
 .planet_accordion_body table {
   border-color: #a57b2b;
+}
+
+@media screen and (max-width: 650px) {
+  .planet_accordion {
+    width: 490px;
+  }
+  button {
+    font-size: small;
+  }
+  .planet_accordion_body table, .planet_accordion_body table td {
+    font-size: small;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 550px) {
+  .planet_accordion {
+    width: 450px;
+  }
+  .planet_accordion_body table {
+    text-align: justify;
+  }
 }/*# sourceMappingURL=PlanetsInfo.module.css.map */

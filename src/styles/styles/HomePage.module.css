@@ -10,4 +10,10 @@
 
 .home_accordion_body {
   background-color: #a0a485;
+}
+
+@media screen and (max-width: 750px) {
+  header {
+    margin-bottom: 70px;
+  }
 }/*# sourceMappingURL=HomePage.module.css.map */

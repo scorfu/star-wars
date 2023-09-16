@@ -2,8 +2,8 @@
 
 .vehicle_card {
   border-style: none;
-  background-color: $lightBackground;
-  min-width: 35rem;
+  background-color: transparent;
+  width: 500px;
   margin-bottom: 2vh;
   color: $brownBackground;
 }
@@ -25,4 +25,19 @@
 }
 .vechicle_table {
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .vehicle_card {
+    font-size: small;
+    
+  }
+  .vehicle_card_body {
+    font-size: small;
+    padding: 6px;
+  }
+
+  .vechicle_table td, .vechicle_table th{
+    padding: 6px;
+  }
 }

@@ -4,7 +4,8 @@
   font-family: "Star Wars", sans-serif;
 }
 
-.character_accordion_header button:not(.collapesed), .traits_accordion_header button:not(.collapesed) {
+.character_accordion_header button:not(.collapesed),
+.traits_accordion_header button:not(.collapesed) {
   background-color: #66999d;
 }
 

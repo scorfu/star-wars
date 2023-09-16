@@ -14,3 +14,8 @@
 .species_container th {
   background-color: $green;
 }
+@media screen and (max-width: 650px) {
+  .species_container {
+    margin-bottom: 2vh;
+  }
+}

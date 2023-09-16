@@ -9,3 +9,9 @@
 .home_accordion_body {
   background-color: $lightGreen;
 }
+
+@media screen and (max-width: 750px) {
+  header{
+    margin-bottom: 70px;
+  }
+}

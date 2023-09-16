@@ -16,7 +16,7 @@ function VehiclesInfo({ vehicle }) {
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <Table striped bordered hover className={classes.vechicle_table}>
+        <Table striped bordered hover className={classes.vechicle_table} responsive>
           <thead>
             <tr>
               <th>Consumables</th>

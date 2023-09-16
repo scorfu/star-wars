@@ -2,7 +2,7 @@
 
 .starship_card {
   border: none;
-  background-color: $lightBackground;
+  background-color: transparent;
 }
 .starship_card_body {
   background-color: $teal;
@@ -26,4 +26,11 @@
 }
 .starship_tableLine {
   background-color: $tealMedium;
+}
+
+@media screen and (max-width: 500px) {
+  .starship_card {
+    min-width: 377px;
+    margin-right: 10px;
+  }
 }

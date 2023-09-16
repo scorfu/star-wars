@@ -23,7 +23,7 @@ const Notes = ({ noteDetails }) => {
     return (
         <div id={noteDetails.id}>
             <div><b>{noteDetails.summary}</b></div>
-            <div>Description: {noteDetails.description}</div>
+            <div>{noteDetails.description}</div>
             <p>P.S. <i>{noteDetails.ps}</i></p>
             <button onClick={deleteNoteHandler}>Delete Note</button>
             <hr />

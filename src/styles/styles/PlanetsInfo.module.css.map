@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../_variables.scss","../PlanetsInfo.module.scss"],"names":[],"mappings":"AAAQ;AACA;ACCR;EACI;;;AAEJ;EACI,aD8DO;;;AC3DX;EACI,kBDEG;;;ACCP;EACI,kBDJS;;;ACOb;EACI,cDXI","file":"PlanetsInfo.module.css"}
+{"version":3,"sourceRoot":"","sources":["../_variables.scss","../PlanetsInfo.module.scss"],"names":[],"mappings":"AAAQ;AACA;ACCR;EACE;;;AAEF;EACE,aD8DS;;;AC5DX;EACE,kBDGK;;;ACDP;AAAA;EAEE,kBDHW;;;ACKb;EACE,cDTM;;;ACYR;EACE;IACE;;EAEF;IACE;;EAEF;IACE;IACA;;;AAIJ;EACE;IACE;;EAEF;IACE","file":"PlanetsInfo.module.css"}

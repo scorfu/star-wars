@@ -4,7 +4,8 @@
   margin-bottom: 6vh;
 }
 
-.species_name, .second_row {
+.species_name,
+.second_row {
   font-family: "Star Wars", sans-serif;
   color: #2f1808;
 }
@@ -15,4 +16,10 @@
 
 .species_container th {
   background-color: #525445;
+}
+
+@media screen and (max-width: 650px) {
+  .species_container {
+    margin-bottom: 2vh;
+  }
 }/*# sourceMappingURL=SpeciesInfo.module.css.map */

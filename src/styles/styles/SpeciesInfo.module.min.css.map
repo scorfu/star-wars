@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../_variables.scss","../SpeciesInfo.module.scss"],"names":[],"mappings":"AAAQ,kDACA,4OCCR,mBACI,kBAGJ,0BACI,YD6DO,uBC5DP,MDJc,QCMlB,YACI,gBAEJ,sBACI,iBDHI","file":"SpeciesInfo.module.min.css"}
+{"version":3,"sourceRoot":"","sources":["../_variables.scss","../SpeciesInfo.module.scss"],"names":[],"mappings":"AAAQ,kDACA,4OCCR,mBACE,kBAEF,0BAEE,YD6DS,uBC5DT,MDJgB,QCMlB,YACE,gBAEF,sBACE,iBDHM,QCKR,qCACE,mBACE","file":"SpeciesInfo.module.min.css"}

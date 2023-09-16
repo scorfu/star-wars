@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../_variables.scss","../SpeciesInfo.module.scss"],"names":[],"mappings":"AAAQ;AACA;ACCR;EACI;;;AAGJ;EACI,aD6DO;EC5DP,ODJc;;;ACMlB;EACI;;;AAEJ;EACI,kBDHI","file":"SpeciesInfo.module.css"}
+{"version":3,"sourceRoot":"","sources":["../_variables.scss","../SpeciesInfo.module.scss"],"names":[],"mappings":"AAAQ;AACA;ACCR;EACE;;;AAEF;AAAA;EAEE,aD6DS;EC5DT,ODJgB;;;ACMlB;EACE;;;AAEF;EACE,kBDHM;;;ACKR;EACE;IACE","file":"SpeciesInfo.module.css"}

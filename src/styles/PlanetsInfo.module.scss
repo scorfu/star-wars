@@ -16,3 +16,25 @@
 .planet_accordion_body table {
   border-color: $gold;
 }
+
+@media screen and (max-width: 650px) {
+  .planet_accordion{
+    width: 490px;
+  }
+  button {
+    font-size: small;
+  }
+  .planet_accordion_body table, .planet_accordion_body table td {
+    font-size: small;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .planet_accordion {
+    width: 450px;
+  }
+  .planet_accordion_body table{
+    text-align: justify;
+  }
+}

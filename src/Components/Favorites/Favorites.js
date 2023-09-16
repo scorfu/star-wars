@@ -21,7 +21,7 @@ const Favorites = () => {
                 <Notes key={index} noteDetails={note}>
                 </Notes>
                 )
-            })};
+            })}
         </React.Fragment>
     )
 }
