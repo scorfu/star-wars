@@ -2,8 +2,10 @@ import classes from '../../styles/styles/ProfileForm.module.css';
 import React, { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchUser } from '../../fetch/fetch';
-import { authKEY } from '../../store/authKEY';
+// import { authKEY } from '../../store/authKEY';
 
+
+const authKey = process.env.authKEY;
 
 const ProfileForm = () => {
   const newPasswordInputRef = useRef();
@@ -19,7 +21,7 @@ const ProfileForm = () => {
       enteredNewPassword: enteredNewPassword
     }
     //ADD VALIDATION
-    fetchUser('passwordChange', `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${authKEY}`, options).then(res => {
+    fetchUser('passwordChange', `https://identitytoolkit.googleapis.com/v1/accounts:update?key=${authKey}`, options).then(res => {
         if(res.status === 200) {
           setPasswordChanged(true)
           alert('Password changed successfuly!');

@@ -1,10 +1,12 @@
 import { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { authKEY } from '../../store/authKEY';
+// import { authKEY } from '../../store/authKEY';
 import { login } from '../../features/starWarsAuthSlice';
 import { fetchUser } from '../../fetch/fetch';
 import classes from '../../styles/styles/AuthForm.module.css';
+
+const authKey = process.env.authKEY;
 
 const AuthForm = () => {
   const emailInputRef = useRef();
@@ -27,9 +29,9 @@ const AuthForm = () => {
     setIsLoading(true) //set is loading to true whenever you do a request
     let url; //depending on the isLogin url changes from SIGN IN to SIGN UP
     if (isLogin) {
-      url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${authKEY}`
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${authKey}`
     } else {
-      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${authKEY}`
+      url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${authKey}`
     };
     const options = {
       enteredEmail: enteredEmail,
