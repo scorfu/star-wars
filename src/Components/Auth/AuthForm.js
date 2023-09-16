@@ -6,7 +6,7 @@ import { login } from '../../features/starWarsAuthSlice';
 import { fetchUser } from '../../fetch/fetch';
 import classes from '../../styles/styles/AuthForm.module.css';
 
-const authKey = process.env.authKEY;
+const authKey = process.env.REACT_APP_API_KEY;
 
 const AuthForm = () => {
   const emailInputRef = useRef();
