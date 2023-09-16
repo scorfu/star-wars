@@ -1,14 +1,30 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/starWarsAuthSlice";
 import classes from '../../styles/styles/Navbar.module.css';
 import starWarsImg from '../../styles/img/star-wars-logo.png'
 
+
 const Navbar = () => {
     const isLoggedIn = useSelector(state => state.auth.token);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (menuRef.current != event.target) {
+                console.log('The target', event.target);
+                console.log('The Menu', menuRef.current);
+                document.getElementById('hamburger_input').checked = false;
+            };
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [menuRef]);
 
     const logoutHandler = () => {
         dispatch(logout());
@@ -19,8 +35,8 @@ const Navbar = () => {
         <header >
             <img src={starWarsImg} />
             <input type="checkbox" className={`${classes.burger_shower} ${classes.hamburger_input}`} id='hamburger_input' />
-            <label for='hamburger_input' id='hamburger_menu' className={classes.hamburger_menu}>
-                <nav className={classes.sidebar_menu}>
+            <label for='hamburger_input' id='hamburger_menu' className={classes.hamburger_menu} >
+                <nav className={classes.sidebar_menu} ref={menuRef}>
                     <ul>
                         {!isLoggedIn && (
                             <li>

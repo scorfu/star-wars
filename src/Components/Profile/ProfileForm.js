@@ -7,6 +7,7 @@ import { fetchUser } from '../../fetch/fetch';
 
 const authKey = process.env.REACT_APP_API_KEY;
 
+
 const ProfileForm = () => {
   const newPasswordInputRef = useRef();
   const token = useSelector(state => state.auth.token);

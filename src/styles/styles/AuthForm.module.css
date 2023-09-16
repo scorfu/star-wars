@@ -38,6 +38,10 @@
   padding: 0.25rem;
 }
 
+.control input:invalid {
+  background-color: rgba(237, 188, 188, 0.814);
+}
+
 .actions {
   margin-top: 1.5rem;
   display: flex;
