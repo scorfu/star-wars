@@ -35,7 +35,6 @@ const AllVechicles = () => {
                 </div>
             }</React.Fragment>
         </React.Fragment>
-
     )
 }
 export default AllVechicles;
