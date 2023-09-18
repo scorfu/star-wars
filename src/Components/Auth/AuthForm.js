@@ -7,7 +7,6 @@ import { fetchUser } from '../../fetch/fetch';
 import classes from '../../styles/styles/AuthForm.module.css';
 
 const authKey = process.env.REACT_APP_API_KEY;
-console.log(authKey);
 
 const AuthForm = () => {
   const emailInputRef = useRef();

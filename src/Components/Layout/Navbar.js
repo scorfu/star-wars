@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/starWarsAuthSlice";
@@ -15,8 +15,6 @@ const Navbar = () => {
     useEffect(() => {
         function handleClickOutside(event) {
             if (menuRef.current != event.target) {
-                console.log('The target', event.target);
-                console.log('The Menu', menuRef.current);
                 document.getElementById('hamburger_input').checked = false;
             };
         }
@@ -33,9 +31,9 @@ const Navbar = () => {
 
     return (
         <header >
-            <img src={starWarsImg} />
+            <img src={starWarsImg} alt="Star Wars logo"/>
             <input type="checkbox" className={`${classes.burger_shower} ${classes.hamburger_input}`} id='hamburger_input' />
-            <label for='hamburger_input' id='hamburger_menu' className={classes.hamburger_menu} >
+            <label htmlFor='hamburger_input' id='hamburger_menu' className={classes.hamburger_menu} >
                 <nav className={classes.sidebar_menu} ref={menuRef}>
                     <ul>
                         {!isLoggedIn && (

@@ -25,9 +25,8 @@ const AllSpecies = () => {
         let nextPageNumber = currentPageNumber + 1;
         setIsLoading(true)
         if (nextPageNumber >= 5) {
-            console.log('No more pages');
             nextPageNumber = currentPageNumber;
-            return
+            return;
         }
         const nextURL = URLtoAdd + nextPageNumber;
         dispatch(setCurrentPageNumber(nextPageNumber));
@@ -37,7 +36,6 @@ const AllSpecies = () => {
 
     return (
         <React.Fragment>
-            {/* <Navbar></Navbar> */}
             <h1>Species</h1>
             <React.Fragment>
                 {speciesDisplayed.map(oneSpecies => <SpeciesInfo species={oneSpecies} key={oneSpecies.name}></SpeciesInfo>)}

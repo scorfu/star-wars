@@ -28,7 +28,6 @@ export const { setVehiclesDisplayed, setCurrentPageURL, setCurrentPageNumber } =
 export const fetchAndSetVehicles = (url) => async dispatch => {
     try {
         const vehiclesData = await fetchStarWars('vehicles', url);
-        console.log(vehiclesData);
         dispatch(setVehiclesDisplayed(vehiclesData.results));
     } catch (error) {
         console.error('Couldn\'t get vehicles\'s data: ', error);
