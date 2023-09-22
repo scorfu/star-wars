@@ -14,6 +14,43 @@ const AllStarShips = () => {
     const [isLoading, setIsLoading] = useState(false);
     console.log('on page:', starshipsDisplayed);
 
+    const [arrayOfShips, setArrayOfShips] = useState([...starshipsDisplayed]);
+    const [sortedAz, setSortedAz] = useState(false);
+
+
+    const sortHandler = () => {
+        if (!sortedAz) {
+            const sorted = arrayOfShips.sort((a, b) => {
+                const nameA = a.name.toLowerCase();
+                const nameB = b.name.toLowerCase();
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if (nameA > nameB) {
+                    return 1;
+                }
+                return 0;
+            });
+            setSortedAz(!sortedAz);
+            setArrayOfShips(sorted);
+        } else if(sortedAz) {
+            const sorted = arrayOfShips.sort((a, b) => {
+                const nameA = a.name.toLowerCase();
+                const nameB = b.name.toLowerCase();
+
+                if (nameA > nameB) {
+                    return -1;
+                }
+                if (nameA < nameB) {
+                    return 1;
+                }
+                return 0;
+            });
+            setSortedAz(!sortedAz);
+            setArrayOfShips(sorted);
+        } 
+    } 
+
     useEffect(() => {
         if (currentPageNumber < 5) {
             setIsLoading(true);
@@ -23,16 +60,24 @@ const AllStarShips = () => {
             });
             dispatch(setCurrentPageNumber(nextPageNumber));
             dispatch(setCurrentPageURL(URLtoAdd + nextPageNumber));
+            setArrayOfShips(starshipsDisplayed);
         }
-    }, [currentPageNumber]);
+    }, [currentPageNumber, starshipsDisplayed]);
 
     return (
         <React.Fragment>
             <h1>Starships</h1>
+            <button onClick={sortHandler}>Sort {sortedAz ? `Z-a` : 'A-z'}</button>
             <React.Fragment>{isLoading ?
-                <div className="spinner-border" role="status"> </div> :
+                <div className="spinner-border" role="status"></div> :
                 <div className={classes.starhips_container}>
-                    {starshipsDisplayed.map(starship => <StarshipsInfo starship={starship} key={starship.name}></StarshipsInfo>)}
+
+                    {arrayOfShips.length === 0 ? starshipsDisplayed.map(starship => <StarshipsInfo starship={starship} key={starship.name}></StarshipsInfo>)
+                        :
+                        arrayOfShips.map(starship => <StarshipsInfo starship={starship} key={starship.name}></StarshipsInfo>)}
+
+
+                    {/* {arrayOfShips.map(starship => <StarshipsInfo starship={starship} key={starship.name}></StarshipsInfo>)} */}
                 </div>
             }</React.Fragment>
         </React.Fragment>
