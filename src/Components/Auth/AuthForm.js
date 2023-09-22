@@ -1,9 +1,11 @@
 import { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-// import { authKEY } from '../../store/authKEY';
 import { login } from '../../features/starWarsAuthSlice';
 import { fetchUser } from '../../fetch/fetch';
+
+import Overlay from 'react-bootstrap/Overlay';
+
 import classes from '../../styles/styles/AuthForm.module.css';
 
 const authKey = process.env.REACT_APP_API_KEY;
@@ -13,8 +15,33 @@ const AuthForm = () => {
   const passwordInputRef = useRef();
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [isEmailInvalid, setEmailInvalid] = useState(null);
+  const [isPaswordInvalid, setPassordInvalid] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+
+
+
+const checkEmailValidity = () => {
+  // console.log(emailInputRef.current.value);
+  function isValidEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  }
+      if (!isValidEmail(emailInputRef.current.value)) {
+      setEmailInvalid(true);
+    } else {
+      setEmailInvalid(false)
+    }
+}
+const checkPasswordValidity = () => {
+  if(passwordInputRef.current.value.length < 6) {
+    setPassordInvalid(true);
+  } else {
+    setPassordInvalid(false)
+  }
+}
 
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
@@ -25,6 +52,7 @@ const AuthForm = () => {
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
     // optional: Add validation 
+    
 
     setIsLoading(true) //set is loading to true whenever you do a request
     let url; //depending on the isLogin url changes from SIGN IN to SIGN UP
@@ -103,14 +131,15 @@ const AuthForm = () => {
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor='email'>Your Email</label>
-          <input type='email' id='email' required ref={emailInputRef} />
+          <input type='email' id='email' required ref={emailInputRef} onKeyUp={checkEmailValidity} className={isEmailInvalid && classes.invalid}/>
         </div>
         <div className={classes.control}>
           <label htmlFor='password'>Your Password</label>
-          <input type='password' id='password' required ref={passwordInputRef} />
+          <input type='password' id='password' required ref={passwordInputRef} onKeyUp={checkPasswordValidity} className={isPaswordInvalid && classes.invalid} />
         </div>
         <div className={classes.actions}>
-          {!isLoading && <button>{isLogin ? 'Login' : 'Create Account'}</button>}
+          {!isLoading && <button disabled={(isEmailInvalid || isPaswordInvalid)}>{isLogin ? 'Login' : 'Create Account'}</button>}
+          {(isLogin || !isPaswordInvalid) ? '' : <p>Password should have at least 6 characters</p>} 
           {isLoading && <p>Loading...</p>}
           <button
             type='button'

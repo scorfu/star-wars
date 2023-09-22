@@ -38,10 +38,6 @@
   padding: 0.25rem;
 }
 
-.control input:invalid{
-  background-color: rgba(237, 188, 188, 0.814);
-}
-
 .actions {
   margin-top: 1.5rem;
   display: flex;
@@ -64,6 +60,12 @@
   border-color: $green;
 }
 
+.actions button:disabled{
+  background-color: grey;
+  color: black;
+  cursor: not-allowed;
+}
+
 .actions .toggle {
   margin-top: 1rem;
   background-color: transparent;
@@ -76,4 +78,8 @@
 .actions .toggle:hover {
   background-color: transparent;
   color: $tealGreen;
+}
+
+.invalid{
+  background-color: rgba(237, 188, 188, 0.814) !important;
 }

@@ -38,10 +38,6 @@
   padding: 0.25rem;
 }
 
-.control input:invalid {
-  background-color: rgba(237, 188, 188, 0.814);
-}
-
 .actions {
   margin-top: 1.5rem;
   display: flex;
@@ -63,6 +59,12 @@
   border-color: #525445;
 }
 
+.actions button:disabled {
+  background-color: grey;
+  color: black;
+  cursor: not-allowed;
+}
+
 .actions .toggle {
   margin-top: 1rem;
   background-color: transparent;
@@ -75,4 +77,8 @@
 .actions .toggle:hover {
   background-color: transparent;
   color: #34796a;
+}
+
+.invalid {
+  background-color: rgba(237, 188, 188, 0.814) !important;
 }/*# sourceMappingURL=AuthForm.module.css.map */
