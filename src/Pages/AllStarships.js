@@ -16,11 +16,12 @@ const AllStarShips = () => {
 
     const [arrayOfShips, setArrayOfShips] = useState([...starshipsDisplayed]);
     const [sortedAz, setSortedAz] = useState(false);
-
+    console.log('what is coppied', arrayOfShips);
 
     const sortHandler = () => {
+        const str = [...starshipsDisplayed]
         if (!sortedAz) {
-            const sorted = arrayOfShips.sort((a, b) => {
+            const sorted = str.sort((a, b) => {
                 const nameA = a.name.toLowerCase();
                 const nameB = b.name.toLowerCase();
                 if (nameA < nameB) {
@@ -31,10 +32,10 @@ const AllStarShips = () => {
                 }
                 return 0;
             });
-            setSortedAz(!sortedAz);
+            setSortedAz(!sortedAz)
             setArrayOfShips(sorted);
         } else if(sortedAz) {
-            const sorted = arrayOfShips.sort((a, b) => {
+            const sorted = str.sort((a, b) => {
                 const nameA = a.name.toLowerCase();
                 const nameB = b.name.toLowerCase();
 
@@ -62,7 +63,7 @@ const AllStarShips = () => {
             dispatch(setCurrentPageURL(URLtoAdd + nextPageNumber));
             setArrayOfShips(starshipsDisplayed);
         }
-    }, [currentPageNumber, starshipsDisplayed]);
+    }, [currentPageNumber]);
 
     return (
         <React.Fragment>
