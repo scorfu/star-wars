@@ -4,6 +4,8 @@ import { setCurrentPageURL, setCurrentPageNumber, fetchAndSetStarships } from '.
 import StarshipsInfo from "../Components/StarshipsInfo";
 import classes from '../styles/styles/AllStarships.module.css';
 
+import { sortHandler } from "../utils/helperFunctions";
+
 
 const AllStarShips = () => {
     const dispatch = useDispatch();
@@ -14,43 +16,14 @@ const AllStarShips = () => {
     const [isLoading, setIsLoading] = useState(false);
     console.log('on page:', starshipsDisplayed);
 
-    const [arrayOfShips, setArrayOfShips] = useState([...starshipsDisplayed]);
+    const [arrayOfShips, setArrayOfShips] = useState([]);
     const [sortedAz, setSortedAz] = useState(false);
-    console.log('what is coppied', arrayOfShips);
 
-    const sortHandler = () => {
-        const str = [...starshipsDisplayed]
-        if (!sortedAz) {
-            const sorted = str.sort((a, b) => {
-                const nameA = a.name.toLowerCase();
-                const nameB = b.name.toLowerCase();
-                if (nameA < nameB) {
-                    return -1;
-                }
-                if (nameA > nameB) {
-                    return 1;
-                }
-                return 0;
-            });
-            setSortedAz(!sortedAz)
-            setArrayOfShips(sorted);
-        } else if(sortedAz) {
-            const sorted = str.sort((a, b) => {
-                const nameA = a.name.toLowerCase();
-                const nameB = b.name.toLowerCase();
-
-                if (nameA > nameB) {
-                    return -1;
-                }
-                if (nameA < nameB) {
-                    return 1;
-                }
-                return 0;
-            });
-            setSortedAz(!sortedAz);
-            setArrayOfShips(sorted);
-        } 
-    } 
+    const onSortHandler = () => {
+        const sorted = sortHandler(starshipsDisplayed, sortedAz);
+        setSortedAz(!sortedAz);
+        setArrayOfShips(sorted);
+    }
 
     useEffect(() => {
         if (currentPageNumber < 5) {
@@ -68,7 +41,7 @@ const AllStarShips = () => {
     return (
         <React.Fragment>
             <h1>Starships</h1>
-            <button onClick={sortHandler}>Sort {sortedAz ? `Z-a` : 'A-z'}</button>
+            <button onClick={onSortHandler}>Sort {sortedAz ? `Z-a` : 'A-z'}</button>
             <React.Fragment>{isLoading ?
                 <div className="spinner-border" role="status"></div> :
                 <div className={classes.starhips_container}>

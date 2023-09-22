@@ -3,6 +3,7 @@
 .starship_card {
   border: none;
   background-color: transparent;
+  margin-top: 2vh;
 }
 .starship_card_body {
   background-color: $teal;
@@ -17,7 +18,6 @@
 }
 .starship_card {
   width: 30rem;
-  margin: 5px;
   color: $brownBackground;
 }
 .starship_card_title {
